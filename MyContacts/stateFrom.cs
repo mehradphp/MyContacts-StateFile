@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace MyContacts
     {
 
         IstateRepository repository;
+
+
         public stateFrom()
         {
             InitializeComponent();
@@ -96,6 +99,32 @@ namespace MyContacts
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgState.DataSource = repository.SearchFile(txtSearch.Text);
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog(){Filter = "Excel workbook|*.xlsx"})
+            {
+                if(sfd.ShowDialog()== DialogResult.OK)
+                {
+                    try
+                    {
+                        using(XLWorkbook workbook =new XLWorkbook())
+                        {
+                            workbook.Worksheets.Add(this.repository.SelectAll().Copy(),"file");
+                            workbook.SaveAs(sfd.FileName);
+
+                        }
+                        MessageBox.Show("das ist ok","meesage",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        
+                    }
+                }
+            }
         }
     }
 }

@@ -34,6 +34,8 @@ namespace MyContacts
             this.btnAddFile = new System.Windows.Forms.ToolStripButton();
             this.btnRefreshFile = new System.Windows.Forms.ToolStripButton();
             this.labelSearch = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgState = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +48,7 @@ namespace MyContacts
             this.categoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEddit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnExport = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.labelSearch.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,6 +96,23 @@ namespace MyContacts
             this.labelSearch.TabIndex = 1;
             this.labelSearch.TabStop = false;
             this.labelSearch.Text = "جستجو";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(582, 44);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(215, 22);
+            this.txtSearch.TabIndex = 6;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(803, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 14);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "جستجو";
             // 
             // groupBox2
             // 
@@ -206,28 +224,22 @@ namespace MyContacts
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // label1
+            // btnExport
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(803, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 14);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "جستجو";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(582, 44);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(215, 22);
-            this.txtSearch.TabIndex = 6;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.btnExport.Location = new System.Drawing.Point(18, 357);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(135, 23);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.Text = "دریافت اکسل";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // stateFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 392);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEddit);
             this.Controls.Add(this.groupBox2);
@@ -270,5 +282,6 @@ namespace MyContacts
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnExport;
     }
 }
