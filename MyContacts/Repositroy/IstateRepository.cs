@@ -10,6 +10,8 @@ namespace MyContacts
 
         DataTable SearchFile(string parameter);
 
+        DataTable SearchPrice(string parameter1, string parameter2);
+
         DataTable SelectAll();
 
         DataTable SelectRow(int id);

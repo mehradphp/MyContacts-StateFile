@@ -49,6 +49,13 @@ namespace MyContacts
             this.btnEddit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
+            this.checkMetraj = new System.Windows.Forms.CheckBox();
+            this.checkPrice = new System.Windows.Forms.CheckBox();
+            this.serachBox1 = new System.Windows.Forms.TextBox();
+            this.serachBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.serachBtn = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.labelSearch.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,6 +95,13 @@ namespace MyContacts
             // 
             // labelSearch
             // 
+            this.labelSearch.Controls.Add(this.serachBtn);
+            this.labelSearch.Controls.Add(this.label3);
+            this.labelSearch.Controls.Add(this.label2);
+            this.labelSearch.Controls.Add(this.serachBox2);
+            this.labelSearch.Controls.Add(this.serachBox1);
+            this.labelSearch.Controls.Add(this.checkPrice);
+            this.labelSearch.Controls.Add(this.checkMetraj);
             this.labelSearch.Controls.Add(this.txtSearch);
             this.labelSearch.Controls.Add(this.label1);
             this.labelSearch.Location = new System.Drawing.Point(12, 28);
@@ -110,9 +124,9 @@ namespace MyContacts
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(803, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 14);
+            this.label1.Size = new System.Drawing.Size(64, 14);
             this.label1.TabIndex = 5;
-            this.label1.Text = "جستجو";
+            this.label1.Text = "جستجو کل";
             // 
             // groupBox2
             // 
@@ -234,6 +248,68 @@ namespace MyContacts
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // checkMetraj
+            // 
+            this.checkMetraj.AutoSize = true;
+            this.checkMetraj.Location = new System.Drawing.Point(323, 21);
+            this.checkMetraj.Name = "checkMetraj";
+            this.checkMetraj.Size = new System.Drawing.Size(90, 18);
+            this.checkMetraj.TabIndex = 7;
+            this.checkMetraj.Text = "جستجو متراژ";
+            this.checkMetraj.UseVisualStyleBackColor = true;
+            // 
+            // checkPrice
+            // 
+            this.checkPrice.AutoSize = true;
+            this.checkPrice.Location = new System.Drawing.Point(318, 59);
+            this.checkPrice.Name = "checkPrice";
+            this.checkPrice.Size = new System.Drawing.Size(95, 18);
+            this.checkPrice.TabIndex = 8;
+            this.checkPrice.Text = "جستجو قیمت";
+            this.checkPrice.UseVisualStyleBackColor = true;
+            // 
+            // serachBox1
+            // 
+            this.serachBox1.Location = new System.Drawing.Point(182, 38);
+            this.serachBox1.Name = "serachBox1";
+            this.serachBox1.Size = new System.Drawing.Size(100, 22);
+            this.serachBox1.TabIndex = 9;
+            // 
+            // serachBox2
+            // 
+            this.serachBox2.Location = new System.Drawing.Point(52, 38);
+            this.serachBox2.Name = "serachBox2";
+            this.serachBox2.Size = new System.Drawing.Size(100, 22);
+            this.serachBox2.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(288, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 14);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "از";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(162, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 14);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "تا";
+            // 
+            // serachBtn
+            // 
+            this.serachBtn.Location = new System.Drawing.Point(129, 71);
+            this.serachBtn.Name = "serachBtn";
+            this.serachBtn.Size = new System.Drawing.Size(75, 23);
+            this.serachBtn.TabIndex = 13;
+            this.serachBtn.Text = "جستجو";
+            this.serachBtn.UseVisualStyleBackColor = true;
+            this.serachBtn.Click += new System.EventHandler(this.serachBtn_Click);
+            // 
             // stateFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -283,5 +359,12 @@ namespace MyContacts
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox serachBox2;
+        private System.Windows.Forms.TextBox serachBox1;
+        private System.Windows.Forms.CheckBox checkPrice;
+        private System.Windows.Forms.CheckBox checkMetraj;
+        private System.Windows.Forms.Button serachBtn;
     }
 }

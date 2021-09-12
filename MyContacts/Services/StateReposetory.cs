@@ -93,6 +93,21 @@ namespace MyContacts
 
         }
 
+        public DataTable SearchPrice(string parameter1, string parameter2)
+        {
+            using (SqlConnection studentLookup = new SqlConnection(connectionStringState))
+            {
+                SqlCommand command =
+               new SqlCommand("SELECT * FROM realestateFile WHERE [Price] like '%" + parameter1 + "%' OR [Price] like '%" + parameter2 + "%';", studentLookup);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable data = new DataTable();
+                adapter.Fill(data);
+                return data;
+                    
+            }
+        }
+
 
 
         public DataTable SelectAll()

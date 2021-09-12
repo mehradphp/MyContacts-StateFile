@@ -126,5 +126,12 @@ namespace MyContacts
                 }
             }
         }
+
+        private void serachBtn_Click(object sender, EventArgs e)
+        {
+            dgState.DataSource = repository.SearchPrice(serachBox1.Text, serachBox2.Text);
+
+
+        }
     }
 }
