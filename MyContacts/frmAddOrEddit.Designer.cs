@@ -31,6 +31,7 @@ namespace MyContacts
         {
             this.Price = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.inputMetraj = new System.Windows.Forms.NumericUpDown();
             this.btnSubmitState = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.Category = new System.Windows.Forms.ComboBox();
@@ -38,7 +39,6 @@ namespace MyContacts
             this.label8 = new System.Windows.Forms.Label();
             this.Mobile = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.CityName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@ namespace MyContacts
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Price)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMetraj)).BeginInit();
             this.SuspendLayout();
             // 
             // Price
@@ -66,6 +67,7 @@ namespace MyContacts
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.inputMetraj);
             this.groupBox1.Controls.Add(this.btnSubmitState);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.Category);
@@ -73,7 +75,6 @@ namespace MyContacts
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.Mobile);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.CityName);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.Price);
             this.groupBox1.Controls.Add(this.label5);
@@ -91,6 +92,18 @@ namespace MyContacts
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افزودن اطلاعات";
+            // 
+            // inputMetraj
+            // 
+            this.inputMetraj.Location = new System.Drawing.Point(442, 111);
+            this.inputMetraj.Maximum = new decimal(new int[] {
+            -1454759937,
+            465,
+            0,
+            0});
+            this.inputMetraj.Name = "inputMetraj";
+            this.inputMetraj.Size = new System.Drawing.Size(100, 22);
+            this.inputMetraj.TabIndex = 18;
             // 
             // btnSubmitState
             // 
@@ -156,13 +169,6 @@ namespace MyContacts
             this.label7.TabIndex = 11;
             this.label7.Text = "تلفن تماس";
             // 
-            // CityName
-            // 
-            this.CityName.Location = new System.Drawing.Point(442, 107);
-            this.CityName.Name = "CityName";
-            this.CityName.Size = new System.Drawing.Size(100, 22);
-            this.CityName.TabIndex = 10;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -170,7 +176,7 @@ namespace MyContacts
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 14);
             this.label6.TabIndex = 9;
-            this.label6.Text = "نام شهر";
+            this.label6.Text = "مساحت";
             // 
             // label5
             // 
@@ -254,6 +260,7 @@ namespace MyContacts
             ((System.ComponentModel.ISupportInitialize)(this.Price)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputMetraj)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,7 +273,6 @@ namespace MyContacts
         private System.Windows.Forms.TextBox MalekName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox CodeFile;
-        private System.Windows.Forms.TextBox CityName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown Price;
         private System.Windows.Forms.Label label5;
@@ -279,5 +285,6 @@ namespace MyContacts
         private System.Windows.Forms.ComboBox Category;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSubmitState;
+        private System.Windows.Forms.NumericUpDown inputMetraj;
     }
 }

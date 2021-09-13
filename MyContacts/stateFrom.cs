@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -127,9 +128,25 @@ namespace MyContacts
             }
         }
 
+
+
         private void serachBtn_Click(object sender, EventArgs e)
         {
-            dgState.DataSource = repository.SearchPrice(serachBox1.Text, serachBox2.Text);
+            Process.Start("chrome.exe", "http://www.google.com");
+
+            if (checkMetraj.Checked == true)
+            {
+
+            dgState.DataSource = repository.SearchParams((int)serNum1.Value,(int)serNum2.Value);
+
+
+            }
+            else
+            {
+                dgState.DataSource = repository.SearchMetraj((int)serNum1.Value, (int)serNum2.Value);
+
+            }
+
 
 
         }

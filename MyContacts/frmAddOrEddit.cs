@@ -42,12 +42,13 @@ namespace MyContacts
                 DataTable dt = repository.SelectRow(stateId);
 
                 CodeFile.Text = dt.Rows[0][1].ToString();
-                Address.Text = dt.Rows[0][2].ToString();
+                inputMetraj.Text = dt.Rows[0][2].ToString();
+                Address.Text = dt.Rows[0][3].ToString();
 
-                MalekName.Text = dt.Rows[0][3].ToString();
-                Price.Text = dt.Rows[0][4].ToString();
-                Mobile.Text = dt.Rows[0][5].ToString();
-                Category.Text = dt.Rows[0][6].ToString();
+                MalekName.Text = dt.Rows[0][4].ToString();
+                Price.Text = dt.Rows[0][5].ToString();
+                Mobile.Text = dt.Rows[0][6].ToString();
+                Category.Text = dt.Rows[0][7].ToString();
                 btnSubmitState.Text = "ویرایش";
 
 
@@ -83,12 +84,12 @@ namespace MyContacts
                 bool isSuccess;
                 if(stateId == 0)
                 {
-                    isSuccess  = repository.Insert(CodeFile.Text, Address.Text, MalekName.Text, (int)Price.Value, Mobile.Text, Category.Text);
+                    isSuccess  = repository.Insert(CodeFile.Text,(int)inputMetraj.Value, Address.Text, MalekName.Text, (int)Price.Value, Mobile.Text, Category.Text);
 
                 }
                 else
                 {
-                    isSuccess = repository.Update(stateId,CodeFile.Text,Address.Text,MalekName.Text,(int)Price.Value,Mobile.Text, Category.Text);
+                    isSuccess = repository.Update(stateId,CodeFile.Text, (int)inputMetraj.Value, Address.Text,MalekName.Text,(int)Price.Value,Mobile.Text, Category.Text);
                 }
 
                 if (isSuccess == true)

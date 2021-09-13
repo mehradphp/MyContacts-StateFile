@@ -34,11 +34,22 @@ namespace MyContacts
             this.btnAddFile = new System.Windows.Forms.ToolStripButton();
             this.btnRefreshFile = new System.Windows.Forms.ToolStripButton();
             this.labelSearch = new System.Windows.Forms.GroupBox();
+            this.serNum2 = new System.Windows.Forms.NumericUpDown();
+            this.serNum1 = new System.Windows.Forms.NumericUpDown();
+            this.serachBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkPrice = new System.Windows.Forms.CheckBox();
+            this.checkMetraj = new System.Windows.Forms.CheckBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgState = new System.Windows.Forms.DataGridView();
+            this.btnEddit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metraj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameMalek = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,18 +57,10 @@ namespace MyContacts
             this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEddit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.checkMetraj = new System.Windows.Forms.CheckBox();
-            this.checkPrice = new System.Windows.Forms.CheckBox();
-            this.serachBox1 = new System.Windows.Forms.TextBox();
-            this.serachBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.serachBtn = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.labelSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.serNum2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serNum1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgState)).BeginInit();
             this.SuspendLayout();
@@ -95,11 +98,11 @@ namespace MyContacts
             // 
             // labelSearch
             // 
+            this.labelSearch.Controls.Add(this.serNum2);
+            this.labelSearch.Controls.Add(this.serNum1);
             this.labelSearch.Controls.Add(this.serachBtn);
             this.labelSearch.Controls.Add(this.label3);
             this.labelSearch.Controls.Add(this.label2);
-            this.labelSearch.Controls.Add(this.serachBox2);
-            this.labelSearch.Controls.Add(this.serachBox1);
             this.labelSearch.Controls.Add(this.checkPrice);
             this.labelSearch.Controls.Add(this.checkMetraj);
             this.labelSearch.Controls.Add(this.txtSearch);
@@ -110,6 +113,78 @@ namespace MyContacts
             this.labelSearch.TabIndex = 1;
             this.labelSearch.TabStop = false;
             this.labelSearch.Text = "جستجو";
+            // 
+            // serNum2
+            // 
+            this.serNum2.Location = new System.Drawing.Point(56, 39);
+            this.serNum2.Maximum = new decimal(new int[] {
+            -1863462913,
+            46,
+            0,
+            0});
+            this.serNum2.Name = "serNum2";
+            this.serNum2.Size = new System.Drawing.Size(100, 22);
+            this.serNum2.TabIndex = 15;
+            // 
+            // serNum1
+            // 
+            this.serNum1.Location = new System.Drawing.Point(182, 39);
+            this.serNum1.Maximum = new decimal(new int[] {
+            -1863462913,
+            46,
+            0,
+            0});
+            this.serNum1.Name = "serNum1";
+            this.serNum1.Size = new System.Drawing.Size(100, 22);
+            this.serNum1.TabIndex = 14;
+            // 
+            // serachBtn
+            // 
+            this.serachBtn.Location = new System.Drawing.Point(129, 71);
+            this.serachBtn.Name = "serachBtn";
+            this.serachBtn.Size = new System.Drawing.Size(75, 23);
+            this.serachBtn.TabIndex = 13;
+            this.serachBtn.Text = "جستجو";
+            this.serachBtn.UseVisualStyleBackColor = true;
+            this.serachBtn.Click += new System.EventHandler(this.serachBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(162, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 14);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "تا";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(288, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 14);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "از";
+            // 
+            // checkPrice
+            // 
+            this.checkPrice.AutoSize = true;
+            this.checkPrice.Location = new System.Drawing.Point(318, 59);
+            this.checkPrice.Name = "checkPrice";
+            this.checkPrice.Size = new System.Drawing.Size(95, 18);
+            this.checkPrice.TabIndex = 8;
+            this.checkPrice.Text = "جستجو قیمت";
+            this.checkPrice.UseVisualStyleBackColor = true;
+            // 
+            // checkMetraj
+            // 
+            this.checkMetraj.AutoSize = true;
+            this.checkMetraj.Location = new System.Drawing.Point(323, 21);
+            this.checkMetraj.Name = "checkMetraj";
+            this.checkMetraj.Size = new System.Drawing.Size(90, 18);
+            this.checkMetraj.TabIndex = 7;
+            this.checkMetraj.Text = "جستجو متراژ";
+            this.checkMetraj.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -146,6 +221,7 @@ namespace MyContacts
             this.dgState.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgState.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
+            this.metraj,
             this.CodFile,
             this.Address,
             this.NameMalek,
@@ -161,6 +237,36 @@ namespace MyContacts
             this.dgState.TabIndex = 0;
             this.dgState.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgState_CellContentClick);
             // 
+            // btnEddit
+            // 
+            this.btnEddit.Location = new System.Drawing.Point(806, 357);
+            this.btnEddit.Name = "btnEddit";
+            this.btnEddit.Size = new System.Drawing.Size(75, 23);
+            this.btnEddit.TabIndex = 3;
+            this.btnEddit.Text = "ویرایش";
+            this.btnEddit.UseVisualStyleBackColor = true;
+            this.btnEddit.Click += new System.EventHandler(this.btnEddit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(725, 357);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "حذف";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(18, 357);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(135, 23);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.Text = "دریافت اکسل";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -168,6 +274,13 @@ namespace MyContacts
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // metraj
+            // 
+            this.metraj.DataPropertyName = "metraj";
+            this.metraj.HeaderText = "مساحت";
+            this.metraj.Name = "metraj";
+            this.metraj.ReadOnly = true;
             // 
             // CodFile
             // 
@@ -218,98 +331,6 @@ namespace MyContacts
             this.categoryname.Name = "categoryname";
             this.categoryname.ReadOnly = true;
             // 
-            // btnEddit
-            // 
-            this.btnEddit.Location = new System.Drawing.Point(806, 357);
-            this.btnEddit.Name = "btnEddit";
-            this.btnEddit.Size = new System.Drawing.Size(75, 23);
-            this.btnEddit.TabIndex = 3;
-            this.btnEddit.Text = "ویرایش";
-            this.btnEddit.UseVisualStyleBackColor = true;
-            this.btnEddit.Click += new System.EventHandler(this.btnEddit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(725, 357);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "حذف";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(18, 357);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(135, 23);
-            this.btnExport.TabIndex = 5;
-            this.btnExport.Text = "دریافت اکسل";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // checkMetraj
-            // 
-            this.checkMetraj.AutoSize = true;
-            this.checkMetraj.Location = new System.Drawing.Point(323, 21);
-            this.checkMetraj.Name = "checkMetraj";
-            this.checkMetraj.Size = new System.Drawing.Size(90, 18);
-            this.checkMetraj.TabIndex = 7;
-            this.checkMetraj.Text = "جستجو متراژ";
-            this.checkMetraj.UseVisualStyleBackColor = true;
-            // 
-            // checkPrice
-            // 
-            this.checkPrice.AutoSize = true;
-            this.checkPrice.Location = new System.Drawing.Point(318, 59);
-            this.checkPrice.Name = "checkPrice";
-            this.checkPrice.Size = new System.Drawing.Size(95, 18);
-            this.checkPrice.TabIndex = 8;
-            this.checkPrice.Text = "جستجو قیمت";
-            this.checkPrice.UseVisualStyleBackColor = true;
-            // 
-            // serachBox1
-            // 
-            this.serachBox1.Location = new System.Drawing.Point(182, 38);
-            this.serachBox1.Name = "serachBox1";
-            this.serachBox1.Size = new System.Drawing.Size(100, 22);
-            this.serachBox1.TabIndex = 9;
-            // 
-            // serachBox2
-            // 
-            this.serachBox2.Location = new System.Drawing.Point(52, 38);
-            this.serachBox2.Name = "serachBox2";
-            this.serachBox2.Size = new System.Drawing.Size(100, 22);
-            this.serachBox2.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 14);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "از";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(162, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 14);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "تا";
-            // 
-            // serachBtn
-            // 
-            this.serachBtn.Location = new System.Drawing.Point(129, 71);
-            this.serachBtn.Name = "serachBtn";
-            this.serachBtn.Size = new System.Drawing.Size(75, 23);
-            this.serachBtn.TabIndex = 13;
-            this.serachBtn.Text = "جستجو";
-            this.serachBtn.UseVisualStyleBackColor = true;
-            this.serachBtn.Click += new System.EventHandler(this.serachBtn_Click);
-            // 
             // stateFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -331,6 +352,8 @@ namespace MyContacts
             this.toolStrip1.PerformLayout();
             this.labelSearch.ResumeLayout(false);
             this.labelSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.serNum2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serNum1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgState)).EndInit();
             this.ResumeLayout(false);
@@ -348,7 +371,18 @@ namespace MyContacts
         private System.Windows.Forms.ToolStripButton btnAddFile;
         private System.Windows.Forms.Button btnEddit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkPrice;
+        private System.Windows.Forms.CheckBox checkMetraj;
+        private System.Windows.Forms.Button serachBtn;
+        private System.Windows.Forms.NumericUpDown serNum2;
+        private System.Windows.Forms.NumericUpDown serNum1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metraj;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameMalek;
@@ -356,15 +390,5 @@ namespace MyContacts
         private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryname;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox serachBox2;
-        private System.Windows.Forms.TextBox serachBox1;
-        private System.Windows.Forms.CheckBox checkPrice;
-        private System.Windows.Forms.CheckBox checkMetraj;
-        private System.Windows.Forms.Button serachBtn;
     }
 }

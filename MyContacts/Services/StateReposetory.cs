@@ -4,6 +4,7 @@ using System.Data;
 using System.Text;
 using System.Data.SqlClient;
 using ClosedXML.Excel;
+using System.Configuration;
 
 namespace MyContacts
 {
@@ -18,7 +19,7 @@ namespace MyContacts
             try
             {
                 string query = "Delete From realestateFile where id=@ID";
-                SqlCommand command = new SqlCommand(query,connection);
+                SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@ID", id);
                 connection.Open();
@@ -26,7 +27,7 @@ namespace MyContacts
                 return true;
 
             }
-            catch 
+            catch
             {
 
                 return false;
@@ -45,22 +46,22 @@ namespace MyContacts
 
 
 
-        public bool Insert(string codefile, string address, string namemalek, int price, string mobile, string categoryname)
+        public bool Insert(string codefile,int metraj, string address, string namemalek, int price, string mobile, string categoryname)
         {
             SqlConnection connection = new SqlConnection(connectionStringState);
 
             try
             {
 
-                string query = "Insert into realestateFile(CodFile,Address,NameMalek,Price,Mobile,CategoryName) values (@CodFile,@Address,@NameMalek,@Price,@Mobile,@CategoryName)";
+                string query = "Insert into realestateFile(CodFile,metraj,Address,NameMalek,Price,Mobile,CategoryName) values (@CodFile,@metraj,@Address,@NameMalek,@Price,@Mobile,@CategoryName)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Codfile", codefile);
-
+                command.Parameters.AddWithValue("@metraj", metraj);
                 command.Parameters.AddWithValue("@Address", address);
                 command.Parameters.AddWithValue("@NameMalek", namemalek);
                 command.Parameters.AddWithValue("@Price", price);
                 command.Parameters.AddWithValue("@Mobile", mobile);
-                
+
                 command.Parameters.AddWithValue("@CategoryName", categoryname);
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -93,19 +94,30 @@ namespace MyContacts
 
         }
 
-        public DataTable SearchPrice(string parameter1, string parameter2)
+        public DataTable SearchParams(int param1, int param2)
         {
-            using (SqlConnection studentLookup = new SqlConnection(connectionStringState))
-            {
-                SqlCommand command =
-               new SqlCommand("SELECT * FROM realestateFile WHERE [Price] like '%" + parameter1 + "%' OR [Price] like '%" + parameter2 + "%';", studentLookup);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable data = new DataTable();
-                adapter.Fill(data);
-                return data;
-                    
-            }
+            string query = "SELECT * FROM realestateFile WHERE Price BETWEEN @param1 AND @param2;";
+
+
+            SqlConnection connection = new SqlConnection(connectionStringState);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+
+
+            adapter.SelectCommand.Parameters.AddWithValue("@param1", param1 );
+            adapter.SelectCommand.Parameters.AddWithValue("@param2", param2 );
+
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+
+
+            return data;
+
+
+
+
+
         }
 
 
@@ -113,6 +125,7 @@ namespace MyContacts
         public DataTable SelectAll()
         {
             string query = "Select * From realestateFile";
+             
             SqlConnection connection = new SqlConnection(connectionStringState);
             SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
             DataTable data = new DataTable();
@@ -122,7 +135,7 @@ namespace MyContacts
 
         public DataTable SelectRow(int id)
         {
-            string query = "Select * From realestateFile where id ="+id;
+            string query = "Select * From realestateFile where id =" + id;
             SqlConnection connection = new SqlConnection(connectionStringState);
             SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
             DataTable data = new DataTable();
@@ -130,7 +143,7 @@ namespace MyContacts
             return data;
         }
 
-        public bool Update(int id, string codefile, string address, string namemalek, int price, string mobile, string categoryname)
+        public bool Update(int id, string codefile,int metraj, string address, string namemalek, int price, string mobile, string categoryname)
         {
             SqlConnection connection = new SqlConnection(connectionStringState);
 
@@ -138,11 +151,12 @@ namespace MyContacts
             {
 
 
-                string query = "Update realestateFile Set CodFile=@CodFile,Address=@Address,NameMalek=@NameMalek,Price=@Price,Mobile=@Mobile,CategoryName=@CategoryName where id=@ID";
+                string query = "Update realestateFile Set CodFile=@CodFile,metraj=@metraj,Address=@Address,NameMalek=@NameMalek,Price=@Price,Mobile=@Mobile,CategoryName=@CategoryName where id=@ID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ID", id);
 
                 command.Parameters.AddWithValue("@Codfile", codefile);
+                command.Parameters.AddWithValue("@metraj", metraj);
 
                 command.Parameters.AddWithValue("@Address", address);
                 command.Parameters.AddWithValue("@NameMalek", namemalek);
@@ -170,6 +184,28 @@ namespace MyContacts
             }
 
         }
+
+
+
+        public DataTable SearchMetraj(int param1, int param2)
+        {
+            string query = "SELECT * FROM realestateFile WHERE metraj BETWEEN @param1 AND @param2;";
+
+
+            SqlConnection connection = new SqlConnection(connectionStringState);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+
+
+            adapter.SelectCommand.Parameters.AddWithValue("@param1", param1);
+            adapter.SelectCommand.Parameters.AddWithValue("@param2", param2);
+
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+
+
+            return data;
+        }
     }
-    
+
 }

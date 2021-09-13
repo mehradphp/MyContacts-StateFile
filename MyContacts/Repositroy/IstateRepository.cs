@@ -10,15 +10,16 @@ namespace MyContacts
 
         DataTable SearchFile(string parameter);
 
-        DataTable SearchPrice(string parameter1, string parameter2);
+        DataTable SearchParams(int param1, int param2);
+        DataTable SearchMetraj(int param1, int param2);
 
         DataTable SelectAll();
 
         DataTable SelectRow(int id);
 
-        bool Insert(string codefile, string address, string namemalek, int price, string mobile,string categoryname);
+        bool Insert(string codefile,int metraj, string address, string namemalek, int price, string mobile,string categoryname);
 
-        bool Update(int id, string codefile, string address, string namemalek, int price, string mobile, string categoryname);
+        bool Update(int id, string codefile,int metraj, string address, string namemalek, int price, string mobile, string categoryname);
 
         bool Delete(int id);
 
